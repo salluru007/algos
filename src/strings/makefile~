@@ -1,0 +1,14 @@
+IDIR = ../../inc
+CC=g++
+CFLAGS = -I$(IDIR)
+all: largePal
+.PHONY: all
+
+largePal: largePal.o
+	$(CC) -o largePal largePal.o
+largePal.o: largestPalindrome.cpp
+	$(CC) -o largePal.o -c largestPalindrome.cpp
+
+.PHONY: clean
+clean:
+	rm -f *.o
